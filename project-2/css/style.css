@@ -102,3 +102,10 @@ header, footer {
     background-color: var(--color1);  /* Цвет линии */
     margin: 15px auto 30px;        /* Отступы 15 с верху + авто по бокам + 30 с низу */
 }
+
+/* Для кого курс */
+
+.forwhom h5 {
+    padding: 50px;  /* Внутренний отступ */
+    border: 3px solid var(--color1);    /* Создание рамки для иконки + цвет от переменной */
+}
