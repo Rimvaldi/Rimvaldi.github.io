@@ -307,80 +307,79 @@
                 <!-- Размеры сетки - Значение = 12 / кол-во нужных столбцов (для разных экранов свое значение) -->
                 <div class="col-12">
                     
-                    <!-- Заголовок - текст по центру + текст заглавными + цвет переменной 1 + отступ с низу (3) от B5-->
-                    <h2 class="text-center text-uppercase color1 mb-3">Программа курса</h2>
+                  <!-- Заголовок - текст по центру + текст заглавными + цвет переменной 1 + отступ с низу (3) от B5-->
+                  <h2 class="text-center text-uppercase color1 mb-3">Программа курса</h2>
                 </div>
             </div>
 
             <!-- Строка -->
             <div class="row">
                 
-                <!-- Размеры сетки - Значение = 12 / кол-во нужных столбцов (для разных экранов свое значение) -->
-                <div class="col-md-4 col-sm-12">
+              <!-- Размеры сетки - Значение = 12 / кол-во нужных столбцов (для разных экранов свое значение) -->
+              <div class="col-md-4 col-sm-12">
                     
-                    <!-- Заголовок - текст по центру + жирный шрифт + отступ с низу (3) + отступ с верху (3)
-                    + перенос строки -->
-                    <h4 class="text-center fw-bold mb-3 mt-3">Модуль 1<br>(HTML)</h4>
+                <!-- Заголовок - текст по центру + жирный шрифт + отступ с низу (3) + отступ с верху (3)
+                + перенос строки -->
+                <h4 class="text-center fw-bold mb-3 mt-3">Модуль 1<br>(HTML)</h4>
 
-                    <!-- Аккардион от B5 + id кнопки разварота который привязывается к тексту 
-                    в нутри развернутой кнопки -->
-                    <div class="accordion" id="accordion1">
-                      <div class="accordion-item">
-                        
-                        <!-- Заголовок - id связывающий текст -->
-                        <h2 class="accordion-header" id="heading1">
-
-                            <!-- Развернутый элемент по умолчанию - class="accordion-button" -->
-                          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
-                            Введение
-                          </button>
-                        </h2>
-
-                        <!-- Развернутый элемент по умолчанию - class="accordion-collapse collapse show" -->
-                        <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="heading1" data-bs-parent="#accordion1">
+                      <!-- Аккардион 2 от B5 + id (По номеру акардиона)-->
+                      <div class="accordion" id="accordion1">
+                        <div class="accordion-item">
                           
-                          <!-- Основной текст - шрифт курсивом "fst-italic" -->
-                          <div class="accordion-body fst-italic">
-                            Краткий обзор того, что мы будем изучать в данном видео курсе.
-                          </div>
-                        </div>
-                      </div>
+                          <!-- Заголовок - id (по очереди номер) -->
+                          <h2 class="accordion-header" id="heading1">
 
-                      <!-- Аккардион 1.2 -->
-                      <div class="accordion-item">
-                        
-                        <!-- Заголовок - id связывающий текст -->
-                        <h2 class="accordion-header" id="heading2">
+                              <!-- Развернутый элемент по умолчанию -  + data-bs-target="collapse (по очереди номер)" + aria-controls="collapse (по очереди номер)" -->
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                              Введение
+                            </button>
+                          </h2>
 
-                            <!-- Не развернутый элемент по умолчанию - class="accordion-button collapsed" -->
-                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
-                            Установка браузера и редактора кода
-                          </button>
-                        </h2>
-
-                        <!-- Не развернутый элемент по умолчанию - class="accordion-collapse collapse" -->
-                        <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2" data-bs-parent="#accordion1">
-                          
+                          <!-- Развернутый элемент по умолчанию - class="accordion-collapse collapse show" + id="collapse (по очереди номер)" + data-bs-parent="#accordion (по номеру акардиона)" + aria-labelledby="heading (по порядку номер)" -->
+                          <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="heading1" data-bs-parent="#accordion1">
+                            
                             <!-- Основной текст - шрифт курсивом "fst-italic" -->
-                          <div class="accordion-body fst-italic">
-                            В этом уроке установим Google Chrome и редактор кода VS Code.
+                            <div class="accordion-body fst-italic">
+                              Краткий обзор того, что мы будем изучать в данном видео курсе.
+                            </div>
                           </div>
                         </div>
-                      </div>
+
+                        <!-- Аккардион 2.2 -->
+                        <div class="accordion-item">
+                          
+                          <!-- Заголовок - id (по очереди номер) -->
+                          <h2 class="accordion-header" id="heading2">
+
+                              <!-- Развернутый элемент по умолчанию -  + data-bs-target="collapse (по очереди номер)" + aria-controls="collapse (по очереди номер)" -->
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                              Установка браузера и редактора кода
+                            </button>
+                          </h2>
+
+                          <!-- Развернутый элемент по умолчанию - class="accordion-collapse collapse show" + id="collapse (по очереди номер)" + data-bs-parent="#accordion (по номеру акардиона)" + aria-labelledby="heading (по порядку номер)" -->
+                          <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2" data-bs-parent="#accordion1">
+                            
+                              <!-- Основной текст - шрифт курсивом "fst-italic" -->
+                            <div class="accordion-body fst-italic">
+                              Установка и изучение основных сред разработки
+                            </div>
+                          </div>
+                        </div>
 
                       <!-- Аккардион 1.3 -->
                       <div class="accordion-item">
                         
-                        <!-- Заголовок - id связывающий текст -->
+                        <!-- Заголовок - id (по очереди номер) -->
                         <h2 class="accordion-header" id="heading3">
 
-                            <!-- Не развернутый элемент по умолчанию - class="accordion-button collapsed" -->
+                            <!-- Развернутый элемент по умолчанию -  + data-bs-target="collapse (по очереди номер)" + aria-controls="collapse (по очереди номер)" -->
                           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
                             Обзор функций редактора
                           </button>
                         </h2>
 
-                        <!-- Не развернутый элемент по умолчанию - class="accordion-collapse collapse" -->
+                        <!-- Развернутый элемент по умолчанию - class="accordion-collapse collapse show" + id="collapse (по очереди номер)" + data-bs-parent="#accordion (по номеру акардиона)" + aria-labelledby="heading (по порядку номер)" -->
                         <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3" data-bs-parent="#accordion1">
                           
                             <!-- Основной текст - шрифт курсивом "fst-italic" -->
@@ -393,16 +392,16 @@
                       <!-- Аккардион 1.4 -->
                       <div class="accordion-item">
                         
-                        <!-- Заголовок - id связывающий текст -->
+                        <!-- Заголовок - id (по очереди номер) -->
                         <h2 class="accordion-header" id="heading4">
 
-                            <!-- Не развернутый элемент по умолчанию - class="accordion-button collapsed" -->
+                            <!-- Развернутый элемент по умолчанию -  + data-bs-target="collapse (по очереди номер)" + aria-controls="collapse (по очереди номер)" -->
                           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
                             Первые HTML теги
                           </button>
                         </h2>
 
-                        <!-- Не развернутый элемент по умолчанию - class="accordion-collapse collapse" -->
+                        <!-- Развернутый элемент по умолчанию - class="accordion-collapse collapse show" + id="collapse (по очереди номер)" + data-bs-parent="#accordion (по номеру акардиона)" + aria-labelledby="heading (по порядку номер)" -->
                         <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4" data-bs-parent="#accordion1">
                           
                             <!-- Основной текст - шрифт курсивом "fst-italic" -->
@@ -415,16 +414,16 @@
                       <!-- Аккардион 1.5 -->
                       <div class="accordion-item">
                         
-                        <!-- Заголовок - id связывающий текст -->
+                        <!-- Заголовок - id (по очереди номер) -->
                         <h2 class="accordion-header" id="heading5">
 
-                            <!-- Не развернутый элемент по умолчанию - class="accordion-button collapsed" -->
+                            <!-- Развернутый элемент по умолчанию -  + data-bs-target="collapse (по очереди номер)" + aria-controls="collapse (по очереди номер)" -->
                           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
                             Как задавать путь к файлу
                           </button>
                         </h2>
 
-                        <!-- Не развернутый элемент по умолчанию - class="accordion-collapse collapse" -->
+                        <!-- Развернутый элемент по умолчанию - class="accordion-collapse collapse show" + id="collapse (по очереди номер)" + data-bs-parent="#accordion (по номеру акардиона)" + aria-labelledby="heading (по порядку номер)" -->
                         <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="heading5" data-bs-parent="#accordion1">
                           
                             <!-- Основной текст - шрифт курсивом "fst-italic" -->
@@ -437,16 +436,16 @@
                       <!-- Аккардион 1.6 -->
                       <div class="accordion-item">
                         
-                        <!-- Заголовок - id связывающий текст -->
+                        <!-- Заголовок - id (по очереди номер) -->
                         <h2 class="accordion-header" id="heading6">
 
-                            <!-- Не развернутый элемент по умолчанию - class="accordion-button collapsed" -->
+                            <!-- Развернутый элемент по умолчанию -  + data-bs-target="collapse (по очереди номер)" + aria-controls="collapse (по очереди номер)" -->
                           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
                             Создание списка
                           </button>
                         </h2>
 
-                        <!-- Не развернутый элемент по умолчанию - class="accordion-collapse collapse" -->
+                        <!-- Развернутый элемент по умолчанию - class="accordion-collapse collapse show" + id="collapse (по очереди номер)" + data-bs-parent="#accordion (по номеру акардиона)" + aria-labelledby="heading (по порядку номер)" -->
                         <div id="collapse6" class="accordion-collapse collapse" aria-labelledby="heading6" data-bs-parent="#accordion1">
                           
                             <!-- Основной текст - шрифт курсивом "fst-italic" -->
@@ -459,16 +458,16 @@
                       <!-- Аккардион 1.7 -->
                       <div class="accordion-item">
                         
-                        <!-- Заголовок - id связывающий текст -->
+                        <!-- Заголовок - id (по очереди номер) -->
                         <h2 class="accordion-header" id="heading7">
 
-                            <!-- Не развернутый элемент по умолчанию - class="accordion-button collapsed" -->
+                            <!-- Развернутый элемент по умолчанию -  + data-bs-target="collapse (по очереди номер)" + aria-controls="collapse (по очереди номер)" -->
                           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
                             Создание таблиц
                           </button>
                         </h2>
 
-                        <!-- Не развернутый элемент по умолчанию - class="accordion-collapse collapse" -->
+                        <!-- Развернутый элемент по умолчанию - class="accordion-collapse collapse show" + id="collapse (по очереди номер)" + data-bs-parent="#accordion (по номеру акардиона)" + aria-labelledby="heading (по порядку номер)" -->
                         <div id="collapse7" class="accordion-collapse collapse" aria-labelledby="heading7" data-bs-parent="#accordion1">
                           
                             <!-- Основной текст - шрифт курсивом "fst-italic" -->
@@ -481,7 +480,7 @@
                       <!-- Аккардион 1.8 -->
                       <div class="accordion-item">
                         
-                        <!-- Заголовок - id связывающий текст -->
+                        <!-- Заголовок - id (по очереди номер) -->
                         <h2 class="accordion-header" id="heading8">
 
                             <!-- Не развернутый элемент по умолчанию - class="accordion-button collapsed" -->
@@ -490,7 +489,7 @@
                           </button>
                         </h2>
 
-                        <!-- Не развернутый элемент по умолчанию - class="accordion-collapse collapse" -->
+                        <!-- Развернутый элемент по умолчанию - class="accordion-collapse collapse show" + id="collapse (по очереди номер)" + data-bs-parent="#accordion (по номеру акардиона)" + aria-labelledby="heading (по порядку номер)" -->
                         <div id="collapse8" class="accordion-collapse collapse" aria-labelledby="heading8" data-bs-parent="#accordion1">
                           
                             <!-- Основной текст - шрифт курсивом "fst-italic" -->
@@ -503,16 +502,16 @@
                       <!-- Аккардион 1.9 -->
                       <div class="accordion-item">
                         
-                        <!-- Заголовок - id связывающий текст -->
+                        <!-- Заголовок - id (по очереди номер) -->
                         <h2 class="accordion-header" id="heading9">
 
-                            <!-- Не развернутый элемент по умолчанию - class="accordion-button collapsed" -->
+                            <!-- Развернутый элемент по умолчанию -  + data-bs-target="collapse (по очереди номер)" + aria-controls="collapse (по очереди номер)" -->
                           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9" aria-expanded="false" aria-controls="collapse9">
                             Создание форм
                           </button>
                         </h2>
 
-                        <!-- Не развернутый элемент по умолчанию - class="accordion-collapse collapse" -->
+                        <!-- Развернутый элемент по умолчанию - class="accordion-collapse collapse show" + id="collapse (по очереди номер)" + data-bs-parent="#accordion (по номеру акардиона)" + aria-labelledby="heading (по порядку номер)" -->
                         <div id="collapse9" class="accordion-collapse collapse" aria-labelledby="heading9" data-bs-parent="#accordion1">
                           
                             <!-- Основной текст - шрифт курсивом "fst-italic" -->
@@ -521,11 +520,485 @@
                           </div>
                         </div>
                       </div>
-                    </div>
+                  <!-- Конец акардиона 1 -->
+                </div>  
+                <!-- Конец разметки сетки -->  
                 </div>
-            </div>
+
+                    <!-- Акардион 2 -->
+                    <!-- Размеры сетки - Значение = 12 / кол-во нужных столбцов (для разных экранов свое значение) -->
+                    <div class="col-md-4 col-sm-12">
+                                        
+                      <!-- Заголовок - текст по центру + жирный шрифт + отступ с низу (3) + отступ с верху (3)
+                      + перенос строки -->
+                      <h4 class="text-center fw-bold mb-3 mt-3">Модуль 2<br>(CSS)</h4>
+
+                      <!-- Аккардион 2 от B5 + id (По номеру акардиона)-->
+                      <div class="accordion" id="accordion2">
+                        <div class="accordion-item">
+                          
+                          <!-- Заголовок - id (по очереди номер) -->
+                          <h2 class="accordion-header" id="heading10">
+
+                              <!-- Развернутый элемент по умолчанию -  + data-bs-target="collapse (по очереди номер)" + aria-controls="collapse (по очереди номер)" -->
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10" aria-expanded="true" aria-controls="collapse10">
+                              Введение
+                            </button>
+                          </h2>
+
+                          <!-- Развернутый элемент по умолчанию - class="accordion-collapse collapse show" + id="collapse (по очереди номер)" + data-bs-parent="#accordion (по номеру акардиона)" + aria-labelledby="heading (по порядку номер)" -->
+                          <div id="collapse10" class="accordion-collapse collapse show" aria-labelledby="heading10" data-bs-parent="#accordion2">
+                            
+                            <!-- Основной текст - шрифт курсивом "fst-italic" -->
+                            <div class="accordion-body fst-italic">
+                              Краткий обзор того, что мы будем изучать в данном видео курсе.
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- Аккардион 2.2 -->
+                        <div class="accordion-item">
+                          
+                          <!-- Заголовок - id (по очереди номер) -->
+                          <h2 class="accordion-header" id="heading11">
+
+                              <!-- Развернутый элемент по умолчанию -  + data-bs-target="collapse (по очереди номер)" + aria-controls="collapse (по очереди номер)" -->
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse11" aria-expanded="false" aria-controls="collapse11">
+                              Что такое CSS
+                            </button>
+                          </h2>
+
+                          <!-- Развернутый элемент по умолчанию - class="accordion-collapse collapse show" + id="collapse (по очереди номер)" + data-bs-parent="#accordion (по номеру акардиона)" + aria-labelledby="heading (по порядку номер)" -->
+                          <div id="collapse11" class="accordion-collapse collapse" aria-labelledby="heading11" data-bs-parent="#accordion2">
+                            
+                              <!-- Основной текст - шрифт курсивом "fst-italic" -->
+                            <div class="accordion-body fst-italic">
+                              Как он влияет на внешний вид сайта
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- Аккардион 2.3 -->
+                        <div class="accordion-item">
+                          
+                          <!-- Заголовок - id (по очереди номер) -->
+                          <h2 class="accordion-header" id="heading12">
+
+                              <!-- Развернутый элемент по умолчанию -  + data-bs-target="collapse (по очереди номер)" + aria-controls="collapse (по очереди номер)" -->
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse12" aria-expanded="false" aria-controls="collapse12">
+                              Меняем значения CSS свойств
+                            </button>
+                          </h2>
+
+                          <!-- Развернутый элемент по умолчанию - class="accordion-collapse collapse show" + id="collapse (по очереди номер)" + data-bs-parent="#accordion (по номеру акардиона)" + aria-labelledby="heading (по порядку номер)" -->
+                          <div id="collapse12" class="accordion-collapse collapse" aria-labelledby="heading12" data-bs-parent="#accordion2">
+                            
+                              <!-- Основной текст - шрифт курсивом "fst-italic" -->
+                            <div class="accordion-body fst-italic">
+                              Знакомство с основными свойствами CSS
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- Аккардион 2.4 -->
+                        <div class="accordion-item">
+                          
+                          <!-- Заголовок - id (по очереди номер) -->
+                          <h2 class="accordion-header" id="heading13">
+
+                              <!-- Развернутый элемент по умолчанию -  + data-bs-target="collapse (по очереди номер)" + aria-controls="collapse (по очереди номер)" -->
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse13" aria-expanded="false" aria-controls="collapse13">
+                              Задаем стили по классам
+                            </button>
+                          </h2>
+
+                          <!-- Развернутый элемент по умолчанию - class="accordion-collapse collapse show" + id="collapse (по очереди номер)" + data-bs-parent="#accordion (по номеру акардиона)" + aria-labelledby="heading (по порядку номер)" -->
+                          <div id="collapse13" class="accordion-collapse collapse" aria-labelledby="heading13" data-bs-parent="#accordion2">
+                            
+                              <!-- Основной текст - шрифт курсивом "fst-italic" -->
+                            <div class="accordion-body fst-italic">
+                              Изучение использования классов в стилизации
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- Аккардион 2.5 -->
+                        <div class="accordion-item">
+                          
+                          <!-- Заголовок - id (по очереди номер) -->
+                          <h2 class="accordion-header" id="heading14">
+
+                              <!-- Развернутый элемент по умолчанию -  + data-bs-target="collapse (по очереди номер)" + aria-controls="collapse (по очереди номер)" -->
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse14" aria-expanded="false" aria-controls="collapse14">
+                              Объединение классов 
+                            </button>
+                          </h2>
+
+                          <!-- Развернутый элемент по умолчанию - class="accordion-collapse collapse show" + id="collapse (по очереди номер)" + data-bs-parent="#accordion (по номеру акардиона)" + aria-labelledby="heading (по порядку номер)" -->
+                          <div id="collapse14" class="accordion-collapse collapse" aria-labelledby="heading14" data-bs-parent="#accordion2">
+                            
+                              <!-- Основной текст - шрифт курсивом "fst-italic" -->
+                            <div class="accordion-body fst-italic">
+                              В этом уроке разбереся с настройкой для нескольких классов и тегов
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- Аккардион 2.6 -->
+                        <div class="accordion-item">
+                          
+                          <!-- Заголовок - id (по очереди номер) -->
+                          <h2 class="accordion-header" id="heading15">
+
+                              <!-- Развернутый элемент по умолчанию -  + data-bs-target="collapse (по очереди номер)" + aria-controls="collapse (по очереди номер)" -->
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse15" aria-expanded="false" aria-controls="collapse15">
+                              Цветовые схемы
+                            </button>
+                          </h2>
+
+                          <!-- Развернутый элемент по умолчанию - class="accordion-collapse collapse show" + id="collapse (по очереди номер)" + data-bs-parent="#accordion (по номеру акардиона)" + aria-labelledby="heading (по порядку номер)" -->
+                          <div id="collapse15" class="accordion-collapse collapse" aria-labelledby="heading15" data-bs-parent="#accordion2">
+                            
+                              <!-- Основной текст - шрифт курсивом "fst-italic" -->
+                            <div class="accordion-body fst-italic">
+                              Знакомство с наиболее часто встречающимися цветовыми решиниями
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- Аккардион 2.7 -->
+                        <div class="accordion-item">
+                          
+                          <!-- Заголовок - id (по очереди номер) -->
+                          <h2 class="accordion-header" id="heading16">
+
+                              <!-- Развернутый элемент по умолчанию -  + data-bs-target="collapse (по очереди номер)" + aria-controls="collapse (по очереди номер)" -->
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse16" aria-expanded="false" aria-controls="collapse16">
+                              Установка внешних шрифтов
+                            </button>
+                          </h2>
+
+                          <!-- Развернутый элемент по умолчанию - class="accordion-collapse collapse show" + id="collapse (по очереди номер)" + data-bs-parent="#accordion (по номеру акардиона)" + aria-labelledby="heading (по порядку номер)" -->
+                          <div id="collapse16" class="accordion-collapse collapse" aria-labelledby="heading16" data-bs-parent="#accordion2">
+                            
+                              <!-- Основной текст - шрифт курсивом "fst-italic" -->
+                            <div class="accordion-body fst-italic">
+                              Изучение установки дополнительных шрифтов на ваш сайт
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- Аккардион 2.8 -->
+                        <div class="accordion-item">
+                          
+                          <!-- Заголовок - id (по очереди номер) -->
+                          <h2 class="accordion-header" id="heading17">
+
+                              <!-- Развернутый элемент по умолчанию -  + data-bs-target="collapse (по очереди номер)" + aria-controls="collapse (по очереди номер)" -->
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse17" aria-expanded="false" aria-controls="collapse17">
+                              Полноценное позиционирование
+                            </button>
+                          </h2>
+
+                          <!-- Развернутый элемент по умолчанию - class="accordion-collapse collapse show" + id="collapse (по очереди номер)" + data-bs-parent="#accordion (по номеру акардиона)" + aria-labelledby="heading (по порядку номер)" -->
+                          <div id="collapse17" class="accordion-collapse collapse" aria-labelledby="heading17" data-bs-parent="#accordion2">
+                            
+                              <!-- Основной текст - шрифт курсивом "fst-italic" -->
+                            <div class="accordion-body fst-italic">
+                              Изучение методов размещения блоков на странице
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- Аккардион 2.9 -->
+                        <div class="accordion-item">
+                          
+                          <!-- Заголовок - id (по очереди номер) -->
+                          <h2 class="accordion-header" id="heading18">
+
+                              <!-- Развернутый элемент по умолчанию -  + data-bs-target="collapse (по очереди номер)" + aria-controls="collapse (по очереди номер)" -->
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse18" aria-expanded="false" aria-controls="collapse18">
+                              Простые анимации
+                            </button>
+                          </h2>
+
+                          <!-- Развернутый элемент по умолчанию - class="accordion-collapse collapse show" + id="collapse (по очереди номер)" + data-bs-parent="#accordion (по номеру акардиона)" + aria-labelledby="heading (по порядку номер)" -->
+                          <div id="collapse18" class="accordion-collapse collapse" aria-labelledby="heading18" data-bs-parent="#accordion2">
+                            
+                              <!-- Основной текст - шрифт курсивом "fst-italic" -->
+                            <div class="accordion-body fst-italic">
+                              Знакомство с наиболее простыми вариантами анимирования блоков
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>  
+
+                    <!-- Акардион 3 -->
+                    <!-- Размеры сетки - Значение = 12 / кол-во нужных столбцов (для разных экранов свое значение) -->
+                    <div class="col-md-4 col-sm-12">
+                                        
+                      <!-- Заголовок - текст по центру + жирный шрифт + отступ с низу (3) + отступ с верху (3)
+                      + перенос строки -->
+                      <h4 class="text-center fw-bold mb-3 mt-3">Модуль 3<br>(Практика)</h4>
+
+                      <!-- Аккардион 3 от B5 + id (По номеру акардиона)-->
+                      <div class="accordion" id="accordion3">
+                        <div class="accordion-item">
+                          
+                          <!-- Заголовок - id (по очереди номер) -->
+                          <h2 class="accordion-header" id="heading19">
+
+                              <!-- Развернутый элемент по умолчанию -  + data-bs-target="collapse (по очереди номер)" + aria-controls="collapse (по очереди номер)" -->
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse19" aria-expanded="true" aria-controls="collapse19">
+                              Верстка меню сайта
+                            </button>
+                          </h2>
+
+                          <!-- Развернутый элемент по умолчанию - class="accordion-collapse collapse show" + id="collapse (по очереди номер)" + data-bs-parent="#accordion (по номеру акардиона)" + aria-labelledby="heading (по порядку номер)" -->
+                          <div id="collapse19" class="accordion-collapse collapse show" aria-labelledby="heading19" data-bs-parent="#accordion3">
+                            
+                            <!-- Основной текст - шрифт курсивом "fst-italic" -->
+                            <div class="accordion-body fst-italic">
+                              Знакомство с написанием фиксированного меню для сайта
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- Аккардион 3.2 -->
+                        <div class="accordion-item">
+                          
+                          <!-- Заголовок - id (по очереди номер) -->
+                          <h2 class="accordion-header" id="heading20">
+
+                              <!-- Развернутый элемент по умолчанию -  + data-bs-target="collapse (по очереди номер)" + aria-controls="collapse (по очереди номер)" -->
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse20" aria-expanded="false" aria-controls="collapse20">
+                              Домашнее задание
+                            </button>
+                          </h2>
+
+                          <!-- Развернутый элемент по умолчанию - class="accordion-collapse collapse show" + id="collapse (по очереди номер)" + data-bs-parent="#accordion (по номеру акардиона)" + aria-labelledby="heading (по порядку номер)" -->
+                          <div id="collapse20" class="accordion-collapse collapse" aria-labelledby="heading20" data-bs-parent="#accordion3">
+                            
+                              <!-- Основной текст - шрифт курсивом "fst-italic" -->
+                            <div class="accordion-body fst-italic">
+                              Сделать свой вариант уникального меню 
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- Аккардион 3.3 -->
+                        <div class="accordion-item">
+                          
+                          <!-- Заголовок - id (по очереди номер) -->
+                          <h2 class="accordion-header" id="heading21">
+
+                              <!-- Развернутый элемент по умолчанию -  + data-bs-target="collapse (по очереди номер)" + aria-controls="collapse (по очереди номер)" -->
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse21" aria-expanded="false" aria-controls="collapse21">
+                              Верстка фрагмента сайта
+                            </button>
+                          </h2>
+
+                          <!-- Развернутый элемент по умолчанию - class="accordion-collapse collapse show" + id="collapse (по очереди номер)" + data-bs-parent="#accordion (по номеру акардиона)" + aria-labelledby="heading (по порядку номер)" -->
+                          <div id="collapse21" class="accordion-collapse collapse" aria-labelledby="heading21" data-bs-parent="#accordion3">
+                            
+                              <!-- Основной текст - шрифт курсивом "fst-italic" -->
+                            <div class="accordion-body fst-italic">
+                              Создание первого информационного блока сайта
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- Аккардион 3.4 -->
+                        <div class="accordion-item">
+                          
+                          <!-- Заголовок - id (по очереди номер) -->
+                          <h2 class="accordion-header" id="heading22">
+
+                              <!-- Развернутый элемент по умолчанию -  + data-bs-target="collapse (по очереди номер)" + aria-controls="collapse (по очереди номер)" -->
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse22" aria-expanded="false" aria-controls="collapse22">
+                              Домашнее задание
+                            </button>
+                          </h2>
+
+                          <!-- Развернутый элемент по умолчанию - class="accordion-collapse collapse show" + id="collapse (по очереди номер)" + data-bs-parent="#accordion (по номеру акардиона)" + aria-labelledby="heading (по порядку номер)" -->
+                          <div id="collapse22" class="accordion-collapse collapse" aria-labelledby="heading22" data-bs-parent="#accordion3">
+                            
+                              <!-- Основной текст - шрифт курсивом "fst-italic" -->
+                            <div class="accordion-body fst-italic">
+                              Сделать свой вариант первйого элемента сайта 
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- Аккардион 3.5 -->
+                        <div class="accordion-item">
+                          
+                          <!-- Заголовок - id (по очереди номер) -->
+                          <h2 class="accordion-header" id="heading23">
+
+                              <!-- Развернутый элемент по умолчанию -  + data-bs-target="collapse (по очереди номер)" + aria-controls="collapse (по очереди номер)" -->
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse23" aria-expanded="false" aria-controls="collapse23">
+                              Верстка второго блока
+                            </button>
+                          </h2>
+
+                          <!-- Развернутый элемент по умолчанию - class="accordion-collapse collapse show" + id="collapse (по очереди номер)" + data-bs-parent="#accordion (по номеру акардиона)" + aria-labelledby="heading (по порядку номер)" -->
+                          <div id="collapse23" class="accordion-collapse collapse" aria-labelledby="heading23" data-bs-parent="#accordion3">
+                            
+                              <!-- Основной текст - шрифт курсивом "fst-italic" -->
+                            <div class="accordion-body fst-italic">
+                              Создание второго основного элемента сайта 
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- Аккардион 3.6 -->
+                        <div class="accordion-item">
+                          
+                          <!-- Заголовок - id (по очереди номер) -->
+                          <h2 class="accordion-header" id="heading24">
+
+                              <!-- Развернутый элемент по умолчанию -  + data-bs-target="collapse (по очереди номер)" + aria-controls="collapse (по очереди номер)" -->
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse24" aria-expanded="false" aria-controls="collapse24">
+                              Домашнее задание
+                            </button>
+                          </h2>
+
+                          <!-- Развернутый элемент по умолчанию - class="accordion-collapse collapse show" + id="collapse (по очереди номер)" + data-bs-parent="#accordion (по номеру акардиона)" + aria-labelledby="heading (по порядку номер)" -->
+                          <div id="collapse24" class="accordion-collapse collapse" aria-labelledby="heading24" data-bs-parent="#accordion3">
+                            
+                              <!-- Основной текст - шрифт курсивом "fst-italic" -->
+                            <div class="accordion-body fst-italic">
+                              Сделать свой вариант продолжения уже ранее написаным тобою сайта 
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- Аккардион 3.5 -->
+                        <div class="accordion-item">
+                          
+                          <!-- Заголовок - id (по очереди номер) -->
+                          <h2 class="accordion-header" id="heading25">
+
+                              <!-- Развернутый элемент по умолчанию -  + data-bs-target="collapse (по очереди номер)" + aria-controls="collapse (по очереди номер)" -->
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse25" aria-expanded="false" aria-controls="collapse25">
+                              Phoshope для верстальщика
+                            </button>
+                          </h2>
+
+                          <!-- Развернутый элемент по умолчанию - class="accordion-collapse collapse show" + id="collapse (по очереди номер)" + data-bs-parent="#accordion (по номеру акардиона)" + aria-labelledby="heading (по порядку номер)" -->
+                          <div id="collapse25" class="accordion-collapse collapse" aria-labelledby="heading25" data-bs-parent="#accordion3">
+                            
+                              <!-- Основной текст - шрифт курсивом "fst-italic" -->
+                            <div class="accordion-body fst-italic">
+                              Изучение основных рабочих окон программы 
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- Аккардион 3.5 -->
+                        <div class="accordion-item">
+                          
+                          <!-- Заголовок - id (по очереди номер) -->
+                          <h2 class="accordion-header" id="heading26">
+
+                              <!-- Развернутый элемент по умолчанию -  + data-bs-target="collapse (по очереди номер)" + aria-controls="collapse (по очереди номер)" -->
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse26" aria-expanded="false" aria-controls="collapse26">
+                              Финальный проект задание
+                            </button>
+                          </h2>
+
+                          <!-- Развернутый элемент по умолчанию - class="accordion-collapse collapse show" + id="collapse (по очереди номер)" + data-bs-parent="#accordion (по номеру акардиона)" + aria-labelledby="heading (по порядку номер)" -->
+                          <div id="collapse26" class="accordion-collapse collapse" aria-labelledby="heading26" data-bs-parent="#accordion3">
+                            
+                              <!-- Основной текст - шрифт курсивом "fst-italic" -->
+                            <div class="accordion-body fst-italic">
+                              Написание сайта с использованием максимального количества знаний полученных при прохождении курсов
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- Аккардион 3.5 -->
+                        <div class="accordion-item">
+                          
+                          <!-- Заголовок - id (по очереди номер) -->
+                          <h2 class="accordion-header" id="heading27">
+
+                              <!-- Развернутый элемент по умолчанию -  + data-bs-target="collapse (по очереди номер)" + aria-controls="collapse (по очереди номер)" -->
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse27" aria-expanded="false" aria-controls="collapse27">
+                              Бонусы
+                            </button>
+                          </h2>
+
+                          <!-- Развернутый элемент по умолчанию - class="accordion-collapse collapse show" + id="collapse (по очереди номер)" + data-bs-parent="#accordion (по номеру акардиона)" + aria-labelledby="heading (по порядку номер)" -->
+                          <div id="collapse27" class="accordion-collapse collapse" aria-labelledby="heading27" data-bs-parent="#accordion3">
+                            
+                              <!-- Основной текст - шрифт курсивом "fst-italic" -->
+                            <div class="accordion-body fst-italic">
+                              Вы узнаете некоторые хитрости быстрой верстки, которые помогут вам в дальнейшем с изучением веб-разработки 
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+            </div>        
         </div>
-    </section>
+  </section>
+
+  <!-- Блок уроки -->
+  <section class="learning">
+
+    <!-- Контейнер -->
+    <div class="container">
+
+      <!-- Строка -->
+      <div class="row">
+
+        <!-- Размеры сетки - Значение = 12 / кол-во нужных столбцов (для разных экранов свое значение) -->
+        <div class="col-12">
+
+          <!-- Заголовок - текст по центру + текст заглавными + цвет переменной 1 + отступ с низу (5) от B5-->
+          <h2 class="text-center text-uppercase color2 mb-5">Процесс обучения</h2>
+        </div>
+      </div>
+
+      <!-- Строка - Выравнивание элементов по центру + отступ с низу (5) -->
+      <div class="row align-items-center mb-5">
+        
+        <!-- Размеры сетки - Значение = 12 / кол-во нужных столбцов (для разных экранов свое значение) -->
+        <div class="col-lg-9 col-sm-12">
+          <h5>Курс по HTML & CSS доступен в специальном Телеграм канале в удобной форме. Так же вы будете приглашены в Телеграм группу, где можно будет обсудить код с другими участниками и задать свои вопросы.</h5>
+          <h5>Можно обучаться в социальных сетях, там же представлены дополнительные статьи по изучению веб-разработки.</h5>
+
+          <!-- Ссылка на #Footer + открытие в новой вкладке -->
+          <h5>Также курс доступен и на Udemy. К сожалению, нинимальная цена цена за курс, которую там можно установить 1799 рублей. Но если вам удобней обучаться на Udemy то можtnt приобрести курс <a href="https://www.udemy.com/course/itdoctor_html_css/" target="_blank">тут</a>.</h5>
+          <h5>Курс в Телеграм стоит 800 рублей - дешевле чем на Udemy. Так как я не зависел от платформы обучения и смог выставить очень низкую цену, специально для вас.</h5>
+          <h5>Я стараюсь делать видео таким образом, чтобы их можно было смотреть даже с мобильного устройства. Но рекомендую использовать web-версию. Вам будет куда удобнее просматривать видео за своим компьютером или ноутбуком.</h5>
+        </div>
+
+        <!-- Размеры сетки - Значение = 12 / кол-во нужных столбцов (для разных экранов свое значение) + отступы с низу и с верху по (5) для SM экранов + текст по центру -->
+        <div class="col-lg-3 col-sm-12 mb-sm-5 mt-sm-5 text-center">
+
+          <!-- Ссылка на картинку + альтернативный текст + адаптивность изображения-->
+          <img src="img/mockup.png" alt="Процесс обучения" class="img-fluid">
+        </div>
+      </div>
+
+      <!-- Строка -->
+      <div class="row">
+
+        <!-- Размеры сетки - Значение = 12 / кол-во нужных столбцов (для разных экранов свое значение) -->
+        <div class="col-12">
+         
+          <!-- Якорная ссылка к id "#footer" - "Кнопка + Css + Размер + Текст заглавными" -->
+          <a href="#footer" class="btn btn-itd btn-lg text-uppercase">Заказать</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
 
     <!-- Модальное окно B5 c id "myModal" -->
     <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
