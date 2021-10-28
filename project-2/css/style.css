@@ -4,7 +4,7 @@
     --color1: #05b1b1;  /* Переменные цветов */
     --color2: #52339a;  /* Переменные цветов */
 }
-footer, section {
+section {
     padding: 100px 0;   /* Внутренний отступ сверху и снизу = 100, по бокам 0. Границы блоков*/
 }
 header { 
@@ -79,7 +79,7 @@ header, footer {
 .bg2 {   /* Создание класса цвета */
     background-color: var(--color2);   /* Цвет от переменной */
 }
-.about, .shedule {
+.about, .shedule, .author, .buy {
     background: #eee;   /* Задний фон */
 }
 .about i {
@@ -125,4 +125,36 @@ header, footer {
 .learning h5 {
     padding: 25px;  /* Внутренний отступ */
     border: 3px solid var(--color1);    /* Создание рамки для иконки + цвет от переменной */
+}
+
+/* Об авторе */
+
+.author {
+    padding-bottom: 0;  /* Отступ с низу */
+}
+.itd_img {
+    max-width: 260px;   /* Максимальная ширина картинки дабы оно не было таким большим а ширина мобилы 280px*/
+}
+
+/* Коментарии */
+
+.img_rew {
+    margin: 0 auto 10px;    /* 0 с верху + авто по бокам + 15 с низу  */
+    border: 3px solid var(--color1);    /* Создание рамки для иконки - 3px + сплошной линией + цвет от переменной */
+    border-radius: 50%; /* Круглая форма */
+    display: flex;  /* Блочность */
+    justify-content: center;    /* Выровнять "Flex" по центру */
+    align-items: center;    /* Выравнивание "Flex" по центру в нутри контейнера */
+}
+.line_rew {
+    background-color: var(--color2);    /* Цвет линии */
+}
+
+/* Footer */
+
+footer {
+    padding: 30px 0;
+}
+.row_icon i {
+    font-size: 25px;    /* Размер иконок */
 }
