@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" xmlns:article="http://ogp.me/ns/article#" xmlns:book="http://ogp.me/ns/book#" xmlns:product="http://ogp.me/ns/product#" xmlns:profile="http://ogp.me/ns/profile#" xmlns:video="http://ogp.me/ns/video#" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  <head>
+    <meta charset="utf-8" />
+<meta name="title" content="| Белорусская государственная академия связи" />
+<link rel="canonical" href="http://bsac.by/" />
+<link rel="shortlink" href="http://bsac.by/" />
+<meta name="Generator" content="Drupal 8 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="/sites/default/files/favicon_0.png" type="image/png" />
+<link rel="alternate" type="application/rss+xml" title="" href="http://bsac.by/rss.xml" />
+
+    <title>| Белорусская государственная академия связи</title>
+    <link rel="stylesheet" href="/sites/default/files/css/css_3lBjB9LxWGvT5F_MnCGazkuov6eT9QNhKr0hGqtNWTk.css?r4rfru" media="all" />
+<link rel="stylesheet" href="/sites/default/files/css/css_qBmmLlh_w1LM7A1j0jLgOvzQw53mab17_tG0MUqyOAk.css?r4rfru" media="all" />
+
+    
+<!--[if lte IE 8]>
+<script src="/sites/default/files/js/js_VtafjXmRvoUgAzqzYTA3Wrjkx9wcWhjP0G4ZnnqRamA.js"></script>
+<![endif]-->
+
+  </head>
+  <body class="path-frontpage">
+        <a href="#main-content" class="visually-hidden focusable skip-link">
+      Перейти к основному содержанию
+    </a>
+    
+    
+<div id="preloader"></div>
+
+<header role="banner">
+    <div class="wrapper">
+        <a href="/" title="Главная" class="logo-wrapper">
+            <img class="logo" src="/themes/custom/bsac/img/logo/bsac_logo.svg" alt="Главная">
+            <h3>БЕЛОРУССКАЯ ГОСУДАРСТВЕННАЯ<br>
+                АКАДЕМИЯ СВЯЗИ</h3>
+        </a>
+        <!-- Social, schedule -->
+        <div class="header-right">
+            <a href="http://vfbsac.by" class="schedule-text" style="margin-right:25px;">Витебский филиал</a>
+            <a id="low-vision" class="social-icons header-eye" title="Версия для слабовидящих"></a>
+            <style>
+                .header-eye {
+                    background: url(/themes/custom/bsac/img/eye.svg) no-repeat;
+                    background-size: 80%;
+    background-position: center center;
+                cursor:pointer;
+                }
+            </style>
+
+            <a href="https://vk.com/bsac.official" target="_blank" class="social-icons header-vk"></a>
+            <a href="https://www.facebook.com/groups/2424920124406298/" target="_blank" class="social-icons"
+            style="background: url(/themes/custom/bsac/img/social_icons/soc_fb.svg) no-repeat;     background-size: 70%;
+    background-position: center;"></a>
+            <a href="https://twitter.com/bsac_official" target="_blank" class="social-icons header-twitter"></a>
+            <!--<a href="https://www.instagram.com/bsac.by.official" target="_blank"
+               class="social-icons header-instagram"></a>-->
+            <p class="schedule">
+             <!--  <a href="http://vfbsac.by" class="schedule-text">Витебский филиал</a><br> -->
+                <span id="weekday"></span> учебная неделя
+                </p>
+
+            </a>
+        </div>
+        <a  class="header-right-menu" onclick="cklick();"></a>
+    </div>
+
+  <div id="st-menu" style="display:none; text-align:center; padding: 0.5em 2em; vertical-align: baseline;box-shadow: 0px 2px 2px -1px rgba(0,0,0,0.35);">
+       <ul>
+            <li> <span id="weekday_menu"></span> учебная неделя </li>
+            <li>  <a href="http://bsac.by/academy">Академия</a></li>
+            <li>  <a href="http://bsac.by/education">Образование</a></li>
+            <li>  <a href="http://bsac.by/science">Наука</a></li>
+            <li>  <a href="http://bsac.by/entrant">Поступающим</a></li>
+            <li>  <a href="http://bsac.by/students">Обучающимся</a></li>
+        </ul>
+  </div>
+
+                <script>
+
+ 
+//ищем первый предыдущий сентябрь и ведем от него отсчет
+
+var date = new Date();
+
+var startYear;
+if(date.getMonth()>=8) {
+startYear = date.getFullYear();
+}
+else {
+startYear = date.getFullYear()-1;
+}
+
+var firstday = new Date(startYear,8,1);
+
+var startWeek;
+var endWeek;
+
+var thisWeek = null;
+
+if(firstday.getDay()===0) {
+if(date.getMonth()==8 && date.getDate()==1) {
+thisWeek=1;
+}
+else {
+endWeek = new Date(firstday.setDate(1));
+startWeek = new Date(firstday.setDate(-5));
+}
+}
+else {
+var weekday = firstday.getDay();
+var temp = new Date(firstday);
+startWeek = new Date(firstday.setDate(1-(weekday-1)));
+endWeek = new Date(temp.setDate(1+(7-weekday)));
+endWeek.setHours(23,59,59,999);
+}
+
+if(thisWeek==null) {
+thisWeek = 1;
+if(startWeek<date && endWeek>date) {
+
+}
+else
+while(!(startWeek<date && endWeek>date)) {
+// for(var i =0;i<10;i++) {
+// alert('test');
+
+startWeek = new Date(startWeek.setDate(startWeek.getDate()+7));
+endWeek = new Date(endWeek.setDate(endWeek.getDate()+7));
+endWeek.setHours(23,59,59,999);
+
+if(thisWeek!=4) {
+thisWeek++
+}
+else {
+thisWeek =1;
+}
+
+}
+}
+
+
+var span = document.getElementById('weekday');
+span.innerHTML = thisWeek;
+var span = document.getElementById('weekday_menu');
+span.innerHTML = thisWeek;
+
+                </script>
+
+    <script>
+
+    var stickmen = document.getElementById("st-menu");
+    function cklick()
+    {
+        if(stickmen.style.display != "block")
+        {
+            stickmen.style.display = "block";
+        }
+
+        else if(stickmen.style.display == "block")
+        {
+            stickmen.style.display = "none";
+        }
+    }
+    window.addEventListener('resize',resize,false);
+    function resize()
+    {
+        if(window.innerWidth>960 && stickmen.style.display == "block")
+        {
+            stickmen.style.display = "none";
+        }
+    }
+    
+function getCookie(name) {
+    var matches = document.cookie.match(new RegExp(
+        "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+    ));
+    return matches ? decodeURIComponent(matches[1]) : undefined;
+}
+
+
+
+
+if(getCookie("lowVision")==="true")
+{
+    document.getElementsByTagName("body")[0].className = document.getElementsByTagName("body")[0].className + " lowVision"
+}
+
+document.getElementById("low-vision").addEventListener("click",change,false);
+
+function change() {
+    if(getCookie("lowVision")==="false" || !getCookie("lowVision"))
+    {
+        document.cookie = "lowVision=true";
+        location.reload();
+    }
+    else
+    {
+        document.cookie = "lowVision=false";
+        location.reload();
+    }
+
+}
+    
+    
+    
+    
+</script>
+
+
+      <div class="region region-header">
+    <nav>
+    <ul class="main-main-menu">
+                                        <li class="main-menu">
+        <a href="#">Академия</a>
+<div class="underline"></div><div class="dropdown-menu">
+    <div class="dropdown-menu-left">
+         <div class="dd-bg dd-cosmos"></div>
+
+<h1 class="dropdown-menu-left-header">Узнайте о истории Академии связи в интерактивном режиме</h1>
+
+<p><a class="button-read" href="/projects/history" target="_blank"><span>Узнать</span></a></p>
+
+    </div>
+    <div class="dropdown-menu-right">
+        <h1 class="dropdown-menu-right-header">Академия</h1>
+         <ul><li>
+    <a href="/academy">
+        
+            <div class="field field--name-field-p-landing-title field--type-string field--label-hidden field__item">История Академии связи</div>
+      
+    </a>
+</li><li>
+    <a href="/academy">
+        
+            <div class="field field--name-field-p-landing-title field--type-string field--label-hidden field__item">Функции и главные задачи академии</div>
+      
+    </a>
+</li><li>
+    <a href="/academy">
+        
+            <div class="field field--name-field-p-landing-title field--type-string field--label-hidden field__item">Ректорат</div>
+      
+    </a>
+</li><li>
+    <a href="/academy">
+        
+            <div class="field field--name-field-p-landing-title field--type-string field--label-hidden field__item">Научно-методический совет</div>
+      
+    </a>
+</li><li>
+    <a href="/academy">
+        
+            <div class="field field--name-field-p-landing-title field--type-string field--label-hidden field__item">Контакты</div>
+      
+    </a>
+</li><li>
+    <a href="/academy">
+        
+            <div class="field field--name-field-p-landing-title field--type-string field--label-hidden field__item">Почётные профессора  </div>
+      
+    </a>
+</li><li>
+    <a href="/academy">
+        
+            <div class="field field--name-field-p-landing-title field--type-string field--label-hidden field__item">Витебский филиал</div>
+      
+    </a>
+</li><li>
+    <a href="/academy">
+        
+            <div class="field field--name-field-p-landing-title field--type-string field--label-hidden field__item">Аренда имущества</div>
+      
+    </a>
+</li><li>
+    <a href="/academy">
+        
+            <div class="field field--name-field-p-landing-title field--type-string field--label-hidden field__item">Документы</div>
+      
+    </a>
+</li><li>
+    <a href="/academy">
+        
+            <div class="field field--name-field-p-landing-title field--type-string field--label-hidden field__item">Совет академии</div>
+      
+    </a>
+</li><li>
+    <a href="/academy">
+        
+            <div class="field field--name-field-p-landing-title field--type-string field--label-hidden field__item">Структура</div>
+      
+    </a>
+</li><li>
+    <a href="/academy">
+        
+            <div class="field field--name-field-p-landing-title field--type-string field--label-hidden field__item">Итоги работы</div>
+      
+    </a>
+</li><li>
+    <a href="/academy">
+        
+            <div class="field field--name-field-p-landing-title field--type-string field--label-hidden field__item">Молодежные объединения</div>
+      
+    </a>
+</li><li>
+    <a href="/academy">
+        
+            <div class="field field--name-field-p-landing-title field--type-string field--label-hidden field__item">Международное сотрудничество</div>
+      
+    </a>
+</li>         </ul>
+    </div>
+</div>
+    </li>
+    <li class="main-menu">
+        <a href="#">Образование</a>
+<div class="underline"></div><div class="dropdown-menu">
+    <div class="dropdown-menu-left">
+         <div class="dd-bg dd-books"></div>
+
+<h1 class="dropdown-menu-left-header">Выберете факультет и кафедру вашей мечты</h1>
+
+<p><a class="button-read" href="/education#Факультеты"><span>Выбрать</span></a></p>
+
+    </div>
+    <div class="dropdown-menu-right">
+        <h1 class="dropdown-menu-right-header">Образование</h1>
+         <ul><li>
+    <a href="/education">
+        
+            <div class="field field--name-field-p-landing-title field--type-string field--label-hidden field__item">Ресурсные центры</div>
+      
+    </a>
+</li><li>
+    <a href="/education">
+        
+            <div class="field field--name-field-p-landing-title field--type-string field--label-hidden field__item">ЭУМК</div>
+      
+    </a>
+</li><li>
+    <a href="/education">
+        
+            <div class="field field--name-field-p-landing-title field--type-string field--label-hidden field__item">Факультеты</div>
+      
+    </a>
+</li><li>
+    <a href="/education">
+        
+            <div class="field field--name-field-p-landing-title field--type-string field--label-hidden field__item">Кафедры</div>
+      
+    </a>
+</li><li>
+    <a href="/education">
+        
+            <div class="field field--name-field-p-landing-title field--type-string field--label-hidden field__item">Магистратура</div>
+      
+    </a>
+</li><li>
+    <a href="/education">
+        
+            <div class="field field--name-field-p-landing-title field--type-string field--label-hidden field__item">Cпециальности</div>
+      
+    </a>
+</li><li>
+    <a href="/education">
+        
+            <div class="field field--name-field-p-landing-title field--type-string field--label-hidden field__item">Болонский процесс</div>
+      
+    </a>
+</li><li>
+    <a href="/education">
+        
+            <div class="field field--name-field-p-landing-title field--type-string field--label-hidden field__item">Инвестиционный проект «Модернизация высшего образования Республики Беларусь»</div>
+      
+    </a>
+</li><li>
+    <a href="/education">
+        
+            <div class="field field--name-field-p-landing-title field--type-string field--label-hidden field__item">Ресурсный центр обучения лиц с нарушениями слуха современным инфокоммуникационным технологиям</div>
+      
+    </a>
+</li><li>
+    <a href="/education">
+        
+            <div class="field field--name-field-p-landing-title field--type-string field--label-hidden field__item">Инструктивные письма</div>
+      
+    </a>
+</li><li>
+    <a href="/education">
+        
+            <div class="field field--name-field-p-landing-title field--type-string field--label-hidden field__item">Ресурсный центр «Мультимедийные информационные технологии»</div>
+      
+    </a>
+</li>         </ul>
+    </div>
+</div>
+    </li>
+    <li class="main-menu">
+        <a href="#">Наука</a>
+<div class="underline"></div><div class="dropdown-menu">
+    <div class="dropdown-menu-left">
+         <div class="dd-bg dd-lamp"></div>
+
+<h1 class="dropdown-menu-left-header">Студенческое конструкторское бюро создано чтобы воплощать<br>самые смелые, интересные и нужные проекты</h1>
+
+<p><a class="button-read" href="/science#Научно-исследовательскаяработастудентов"><span>Узнать</span></a></p>
+
+    </div>
+    <div class="dropdown-menu-right">
+        <h1 class="dropdown-menu-right-header">Наука</h1>
+         <ul><li>
+    <a href="/science">
+        
+            <div class="field field--name-field-p-landing-title field--type-string field--label-hidden field__item">Научно-исследовательская работа студентов</div>
+      
+    </a>
+</li><li>
+    <a href="/science">
+        
+            <div class="field field--name-field-p-landing-title field--type-string field--label-hidden field__item">Конференции</div>
+      
+    </a>
+</li><li>
+    <a href="/science">
+        
+            <div class="field field--name-field-p-landing-title field--type-string field--label-hidden field__item">Конкурсы и гранты</div>
+      
+    </a>
+</li><li>
+    <a href="/science">
+        
+            <div class="field field--name-field-p-landing-title field--type-string field--label-hidden field__item">Научно-технический отдел</div>
+      
+    </a>
+</li><li>
+    <a href="/science">
+        
+            <div class="field field--name-field-p-landing-title field--type-string field--label-hidden field__item">Научно-исследовательская часть</div>
+      
+    </a>
+</li><li>
+    <a href="/science">
+        
+            <div class="field field--name-field-p-landing-title field--type-string field--label-hidden field__item">Научно-исследовательские лаборатории</div>
+      
+    </a>
+</li><li>
+    <a href="/science">
+        
+            <div class="field field--name-field-p-landing-title field--type-string field--label-hidden field__item">Инициативные НИР</div>
+      
+    </a>
+</li><li>
+    <a href="/science">
+        
+            <div class="field field--name-field-p-landing-title field--type-string field--label-hidden field__item">Научные школы</div>
+      
+    </a>
+</li><li>
+    <a href="/science">
+        
+            <div class="field field--name-field-p-landing-title field--type-string field--label-hidden field__item">Научный журнал «Проблемы инфокоммуникаций»</div>
+      
+    </a>
+</li><li>
+    <a href="/science">
+        
+            <div class="field field--name-field-p-landing-title field--type-string field--label-hidden field__item">Отраслевая лаборатория</div>
+      
+    </a>
+</li><li>
+    <a href="/science">
+        
+            <div class="field field--name-field-p-landing-title field--type-string field--label-hidden field__item">ВУЗы-партнёры </div>
+      
+    </a>
+</li><li>
+    <a href="/science">
+        
+            <div class="field field--name-field-p-landing-title field--type-string field--label-hidden field__item">Научные разработки, изобретения</div>
+      
+    </a>
+</li>         </ul>
+    </div>
+</div>
+    </li>
+    <li class="main-menu">
+        <a href="#">Абитуриенту</a>
+<div class="underline"></div><div class="dropdown-menu">
+    <div class="dropdown-menu-left">
+         <div class="dd-bg dd-forest-road"></div>
+
+<h1 class="dropdown-menu-left-header">Узнайте как поступить к нам!<br />
+От подготовки документов,<br />
+до первого занятия в академии!</h1>
+
+<p><a class="button-read" href="http://bsac.by/entrant#%D0%9F%D1%80%D0%B8%D0%B5%D0%BC%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%BE%D0%B2"><span>Читать</span></a></p>
+
+    </div>
+    <div class="dropdown-menu-right">
+        <h1 class="dropdown-menu-right-header">Абитуриенту</h1>
+         <ul><li>
+    <a href="/entrant">
+        
+            <div class="field field--name-field-p-landing-title field--type-string field--label-hidden field__item">Выпускникам</div>
+      
+    </a>
+</li><li>
+    <a href="/entrant">
+        
+            <div class="field field--name-field-p-landing-title field--type-string field--label-hidden field__item">Централизованное тестирование</div>
+      
+    </a>
+</li><li>
+    <a href="/entrant">
+        
+            <div class="field field--name-field-p-landing-title field--type-string field--label-hidden field__item">Регистрация абитуриентов</div>
+      
+    </a>
+</li><li>
+    <a href="/entrant">
+        
+            <div class="field field--name-field-p-landing-title field--type-string field--label-hidden field__item">Порядок приема в УО &quot;БГАС&quot;</div>
+      
+    </a>
+</li><li>
+    <a href="/entrant">
+        
+            <div class="field field--name-field-p-landing-title field--type-string field--label-hidden field__item">Иностранным гражданам</div>
+      
+    </a>
+</li><li>
+    <a href="/entrant">
+        
+            <div class="field field--name-field-p-landing-title field--type-string field--label-hidden field__item">Контрольные цифры приёма </div>
+      
+    </a>
+</li><li>
+    <a href="/entrant">
+        
+            <div class="field field--name-field-p-landing-title field--type-string field--label-hidden field__item">Образцы и бланки заявлений и договоров </div>
+      
+    </a>
+</li><li>
+    <a href="/entrant">
+        
+            <div class="field field--name-field-p-landing-title field--type-string field--label-hidden field__item">Программы вступительных испытаний</div>
+      
+    </a>
+</li><li>
+    <a href="/entrant">
+        
+            <div class="field field--name-field-p-landing-title field--type-string field--label-hidden field__item">Информация по вселению в общежитие</div>
+      
+    </a>
+</li><li>
+    <a href="/entrant">
+        
+            <div class="field field--name-field-p-landing-title field--type-string field--label-hidden field__item">Поступающим в магистратуру</div>
+      
+    </a>
+</li><li>
+    <a href="/entrant">
+        
+            <div class="field field--name-field-p-landing-title field--type-string field--label-hidden field__item">Информация о ходе приема документов</div>
+      
+    </a>
+</li><li>
+    <a href="/entrant">
+        
+            <div class="field field--name-field-p-landing-title field--type-string field--label-hidden field__item">Дни открытых дверей</div>
+      
+    </a>
+</li><li>
+    <a href="/entrant">
+        
+            <div class="field field--name-field-p-landing-title field--type-string field--label-hidden field__item">Информационный материал</div>
+      
+    </a>
+</li>         </ul>
+    </div>
+</div>
+    </li>
+    <li class="main-menu">
+        <a href="#">Обучающимся</a>
+<div class="underline"></div><div class="dropdown-menu">
+    <div class="dropdown-menu-left">
+         <div class="dd-bg dd-build"></div>
+
+<h1 class="dropdown-menu-left-header">Мы собрали для вас самые необходимые документы,<br />чтобы они были всегда под рукой</h1>
+
+<p><a class="button-read" href="/students#Какоформитьдиплом,курсовой,другиедокументы"><span>Узнать</span></a></p>
+    </div>
+    <div class="dropdown-menu-right">
+        <h1 class="dropdown-menu-right-header">Обучающимся</h1>
+         <ul><li>
+    <a href="/students">
+        
+            <div class="field field--name-field-p-landing-title field--type-string field--label-hidden field__item">Списки обучающихся не вселённых в общежитие</div>
+      
+    </a>
+</li><li>
+    <a href="/students">
+        
+            <div class="field field--name-field-p-landing-title field--type-string field--label-hidden field__item">Как оформить диплом, курсовой, другие документы</div>
+      
+    </a>
+</li><li>
+    <a href="/students">
+        
+            <div class="field field--name-field-p-landing-title field--type-string field--label-hidden field__item">Заочное и дистанционное образование</div>
+      
+    </a>
+</li><li>
+    <a href="/students">
+        
+            <div class="field field--name-field-p-landing-title field--type-string field--label-hidden field__item">Стоимость обучения</div>
+      
+    </a>
+</li><li>
+    <a href="/students">
+        
+            <div class="field field--name-field-p-landing-title field--type-string field--label-hidden field__item">Списки групп нового набора</div>
+      
+    </a>
+</li><li>
+    <a href="/students">
+        
+            <div class="field field--name-field-p-landing-title field--type-string field--label-hidden field__item">Расписания учебных занятий</div>
+      
+    </a>
+</li><li>
+    <a href="/students">
+        
+            <div class="field field--name-field-p-landing-title field--type-string field--label-hidden field__item">Расписание зачетных недель и экзаменационных сессий</div>
+      
+    </a>
+</li><li>
+    <a href="/students">
+        
+            <div class="field field--name-field-p-landing-title field--type-string field--label-hidden field__item">Графики образовательного процесса на 2021/2022 учебный год</div>
+      
+    </a>
+</li>         </ul>
+    </div>
+</div>
+    </li>
+
+
+
+            </ul>
+</nav>
+
+  </div>
+
+</header>
+
+<main role="main">
+
+    <div class="layout-content">
+          <div class="region region-content">
+    
+
+<div class="swiper-container swiper-main">
+    <div class="swiper-wrapper">
+        
+                
+                                        <div class="swiper-slide">
+        <div class="swiper-slide_8117" style="background-image: url('http://bsac.by/sites/default/files/content/slider-main/2022/tibo-2022/2022-02-16/ban22tibo1920x662_0.jpg');">
+  &nbsp;
+</div>
+<a href="https://tibo.by/"></a>
+    </div>
+    <div class="swiper-slide">
+        <div class="swiper-slide_8012" style="background-image: url('http://bsac.by/sites/default/files/content/slider-main/2022/111/2022-01-21/photo-2022-01-21-09-04-57.jpg');">
+  &nbsp;
+</div>
+
+    </div>
+    <div class="swiper-slide">
+        <div class="swiper-slide_7945" style="background-image: url('http://bsac.by/sites/default/files/content/slider-main/2022/god-istoriceskoi-pamati/2022-01-04/slider123.jpg');">
+  &nbsp;
+</div>
+
+    </div>
+    <div class="swiper-slide">
+        <div class="swiper-slide_5786" style="background-image: url('http://bsac.by/sites/default/files/content/slider-main/2020/biometriceskie-dokumenty/2020-10-13/20201013sliderbiometricheskiedocumenti.jpg');">
+  &nbsp;
+</div>
+<a href="https://www.mpt.gov.by/ru/biometricheskie-dokumenty-respubliki-belarus"></a><div class="text-wrapper">
+    <h2>Биометрические документы</h2>
+    <p>Министерством связи и информатизации подготовлены информационные материалы, касающиеся выдачи биометрических документов, в том числе алгоритм действий должностного лица, государственного органа или работника организации при предъявлении гражданином идентификационной карты (ID-карты)</p>
+</div>
+    </div>
+    <div class="swiper-slide">
+        <div class="swiper-slide_5384" style="background-image: url('http://bsac.by/sites/default/files/content/slider-main/2020/abiturientu/2020-07-16/m8i1mw9bwvs.jpg');">
+  &nbsp;
+</div>
+<div class="text-wrapper">
+    <h2>Абитуриенту!</h2>
+    <p>Вся нужные образцы бланков, заявлений и договоров находятся во вкладке &quot;Абитуриенту&quot; -  &quot;Образцы и бланки заявлений и договоров&quot; </p>
+</div>
+    </div>
+    <div class="swiper-slide">
+        <div class="swiper-slide_5294" style="background-image: url('http://bsac.by/sites/default/files/content/slider-main/2020/vnimanieinformacia-dla-inostrannyh-studentov/2020-06-26/1920x1080student-session-manuals.jpg');">
+  &nbsp;
+</div>
+<div class="text-wrapper">
+    <h2>Внимание!Информация для иностранных студентов!</h2>
+    <p>Вся нужная информация об изменениях сроков регистрации и дополнениях в Закон &quot;О правовом положении иностранных граждан и лиц без гражданства в Республике Беларусь&quot; находится во вкладке &quot;Абитуриенту&quot; - &quot;Иностранным гражданам&quot;.</p>
+</div>
+    </div>
+
+
+
+            </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+</div>
+<section class="news-wrapper">
+    
+        
+                                <a href="/events/vstreca-so-studentami" class="usual-news"><h2>Встреча со студентами</h2>
+<p>  16 февраля в УО &quot;Белорусская государственная академия связи&quot; состоялась встреча со студентами на тему: &quot;Проект изменений и дополнений Конституции Республики Беларусь&quot;.</p>
+<span>опубликовано 17 февраля 2022</span>
+</a>
+    <a href="/events/den-pamati-voinov-internacionalistov" class="usual-news"><h2>День памяти воинов-интернационалистов</h2>
+<p>15 февраля 1989 года завершился вывод советских войск из Афганистана. В память о тех трагических годах эта дата стала Днем памяти воинов-интернационалистов.</p>
+<span>опубликовано 16 февраля 2022</span>
+</a>
+    <a href="/events/ves" class="usual-news"><h2>«Я ВЕЩЬ …»</h2>
+<p>10 февраля 2022 года в Новом драматическом театре состоялась премьера спектакля «Я вещь …» по пьесе А.Н. Островского «Бесприданница». Столь яркое театральное событие столицы было увидено обучающими Белорусской государственной академии связи,…</p>
+<span>опубликовано 15 февраля 2022</span>
+</a>
+    <a href="/events/ot-vybora-kazdogo-zavisit-nase-budusee" class="usual-news"><h2>От выбора каждого зависит наше будущее</h2>
+<p>До проведения республиканского референдума по вопросу внесения изменений и дополнений в Конституцию Беларуси остается все меньше времени.  8 февраля в  общежитии № 2 Академии связи состоялась беседа с учащимися и студентами, посвященная этому…</p>
+<span>опубликовано 10 февраля 2022</span>
+</a>
+    <a href="/events/profilakticeskaa-vstreca-s-ucastkovym-inspektorom-inspekcii-po-delam-nesoversennoletnih-uvd" class="usual-news"><h2>Профилактическая встреча с участковым инспектором инспекции по делам несовершеннолетних УВД администрации Партизанского района  г. Минска. </h2>
+<p>09 февраля состоялась встреча студентов Академии связи с участковым инспектором инспекции по делам несовершеннолетних УВД администрации Партизанского района г. Минска лейтенантом милиции Трояновским Алексеем Сергеевичем. </p>
+<span>опубликовано 10 февраля 2022</span>
+</a>
+
+
+
+        <article class="empty-news"></article>
+    <a href="./events" class="show-all-news">Все новости и события</a>
+    <article class="empty-news empty-news-2"></article>
+</section><article class="actual-news">
+
+    <h2>Актуальные события</h2>
+
+                        <p>
+<a href="/events/konstitucia-respubliki-belarus-s-izmeneniami-i-dopolneniami-vynosimymi-na-referendum"><a href="/events/konstitucia-respubliki-belarus-s-izmeneniami-i-dopolneniami-vynosimymi-na-referendum" hreflang="ru">Конституция Республики Беларусь с изменениями и дополнениями, выносимыми на референдум</a></a>
+<br>
+<span><time datetime="00Z" class="datetime">26.01.2022</time>
+</span><br>
+</p>
+    <p>
+<a href="/events/otkryta-novaa-specialnost-vyssego-obrazovania-pervoi-stupeni"><a href="/events/otkryta-novaa-specialnost-vyssego-obrazovania-pervoi-stupeni" hreflang="ru">Открыта новая специальность высшего образования первой ступени</a></a>
+<br>
+<span><time datetime="00Z" class="datetime">23.12.2021</time>
+</span><br>
+</p>
+    <p>
+<a href="/events/priglasaem-vstupit-v-soobsestvo-abiturient-akademii-svazi-2022"><a href="/events/priglasaem-vstupit-v-soobsestvo-abiturient-akademii-svazi-2022" hreflang="ru">Приглашаем вступить в сообщество «Абитуриент Академии Связи 2022»</a></a>
+<br>
+<span><time datetime="00Z" class="datetime">21.12.2021</time>
+</span><br>
+</p>
+
+
+
+</article>
+<section class="learning-centers">
+
+
+    <h1>Вы можете пройти обучение<br>
+        в наших учебных центрах</h1>
+                          <a href="/learning-centers/cisco"><img src="/sites/default/files/content/learning-centers/cisco/logo/cisco.png" width="200" height="100" alt="Cisco" title="Cisco" typeof="foaf:Image" />
+</a>
+
+      <a href="/learning-centers/ucebnyi-centr-huawei-pri-belorusskoi-gosudarstvennoi-akademii-svazi"><img src="/sites/default/files/content/learning-centers/huawei/logo/huawei.png" width="200" height="100" alt="Huawei" title="Huawei" typeof="foaf:Image" />
+</a>
+
+      <a href="/learning-centers/ucebnyi-centr-zte-pri-belorusskoi-gosudarstvennoi-akademii-svazi"><img src="/sites/default/files/content/learning-centers/zte/logo/zte.png" width="200" height="100" alt="ZTE" title="ZTE" typeof="foaf:Image" />
+</a>
+
+      <a href="/learning-centers/1s"><img src="/sites/default/files/content/learning-centers/1s/logo/1s.png" width="200" height="100" alt="1С" title="1С" typeof="foaf:Image" />
+</a>
+
+      <a href="/learning-centers/belpocta"><img src="/sites/default/files/content/learning-centers/belpocta/logo/belpochta.png" width="200" height="100" alt="Белпочта" title="Белпочта" typeof="foaf:Image" />
+</a>
+
+      <a href="/learning-centers/mezdunarodnyi-souz-elektrosvazi"><img src="/sites/default/files/content/learning-centers/mezdunarodnyi-souz-elektrosvazi/logo/2021-11-10/img1355-kopia2.jpg" width="200" height="100" alt="" typeof="foaf:Image" />
+</a>
+
+      <a href="/learning-centers/resursnyi-centr-obucenia-lic-s-naruseniami-sluha-sovremennym-infokommunikacionnym"><img src="/sites/default/files/content/learning-centers/ucebnyi-centr-obucenia-lic-s-naruseniami-sluha-sovremennym-infokommunikacionnym-tehnologiam/logo/sluh.png" width="200" height="100" alt="Ресурсный центр обучения лиц с нарушениями слуха современным инфокоммуникационным технологиям" title="Ресурсный центр обучения лиц с нарушениями слуха современным инфокоммуникационным технологиям" typeof="foaf:Image" />
+</a>
+
+
+
+
+</section>
+              <div class="view view-frontpage view-id-frontpage view-display-id-page_1 js-view-dom-id-f988260df815190d826b7433072cebf443736f5a765d37f7d92b90bc8d238172">
+  
+    
+      
+  
+              <div class="feed-icons">
+      <a href="http://bsac.by/rss.xml" class="feed-icon">
+  Подписаться на 
+</a>
+
+    </div>
+  </div>
+
+
+  </div>
+
+    </div>
+
+    
+</main>
+
+    <footer role="contentinfo">
+        <div class="footer-wrapper">
+              <div class="region region-footer">
+    <nav role="navigation" aria-labelledby="block-bsac-footer-menu" id="block-bsac-footer" class="block block-menu navigation menu--footer">
+            
+  <h2 class="visually-hidden" id="block-bsac-footer-menu">Меню нижнего колонтитула</h2>
+  
+
+        <div class="footer-links-wraper">
+    
+                                                    <ul>
+                                            <h5>Меню сайта</h5>
+                    
+                                            <li>                                            <ul>
+                                            <a href="/academy" target="" data-drupal-link-system-path="node/72">Академия</a>
+                    
+                                    </ul>
+                            <ul>
+                                            <a href="/education" target="" data-drupal-link-system-path="node/71">Образование</a>
+                    
+                                    </ul>
+                            <ul>
+                                            <a href="/science" target="" data-drupal-link-system-path="node/70">Наука</a>
+                    
+                                    </ul>
+                            <ul>
+                                            <a href="/entrant" target="" data-drupal-link-system-path="node/69">Поступающим</a>
+                    
+                                    </ul>
+                            <ul>
+                                            <a href="/students" target="" data-drupal-link-system-path="node/68">Обучающимся</a>
+                    
+                                    </ul>
+                            <ul>
+                                            <a href="/education#Факультеты" target="" data-drupal-link-system-path="node/71">Факультеты</a>
+                    
+                                    </ul>
+                            <ul>
+                                            <a href="/education#Кафедры" target="" data-drupal-link-system-path="node/71">Кафедры</a>
+                    
+                                    </ul>
+                        </li>
+                                    </ul>
+                            <ul>
+                                            <h5>Связаться с нами</h5>
+                    
+                                            <li>                                            <ul>
+                                            <a href="/academy#Контакты" target="" data-drupal-link-system-path="node/72">Наши контакты</a>
+                    
+                                    </ul>
+                            <ul>
+                                            <a href="/pages/kak-proehat" target="" data-drupal-link-system-path="node/370">Как проехать</a>
+                    
+                                    </ul>
+                            <ul>
+                                            <a href="http://vfbsac.by/" target="_blank">Витебский филиал</a>
+                    
+                                    </ul>
+                            <ul>
+                                            <a href="https://mail.bsac.by" target="_blank">Вход на почту</a>
+                    
+                                    </ul>
+                            <ul>
+                                            <a href="http://bsac.by/pages/telefonnyi-spravocnik" target="">Телефонный справочник</a>
+                    
+                                    </ul>
+                        </li>
+                                    </ul>
+                            <ul>
+                                            <h5>К сведению</h5>
+                    
+                                            <li>                                            <ul>
+                                            <a href="/search/node" target="" data-drupal-link-system-path="search/node">Поиск по сайту</a>
+                    
+                                    </ul>
+                            <ul>
+                                            <a href="/pages/odno-okno" target="" data-drupal-link-system-path="node/371">Одно окно</a>
+                    
+                                    </ul>
+                            <ul>
+                                            <a href="/e-address" target="" data-drupal-link-system-path="node/372">Электронное обращение</a>
+                    
+                                    </ul>
+                            <ul>
+                                            <a href="http://bsac.by/pages/vakansii" target="">Вакансии</a>
+                    
+                                    </ul>
+                            <ul>
+                                            <a href="http://bsac.by/pages/pravovaa-informacia" target="">Правовая информация</a>
+                    
+                                    </ul>
+                            <ul>
+                                            <a href="http://bsac.by/pages/nasi-partnery" target="">Наши партнеры</a>
+                    
+                                    </ul>
+                            <ul>
+                                            <a href="http://bsac.by/pages/nasim-partneram" target="">Нашим партнерам</a>
+                    
+                                    </ul>
+                            <ul>
+                                            <a href="http://bsac.by/pages/antikorrupcionnaa-deatelnost" target="">Антикоррупционная деятельность</a>
+                    
+                                    </ul>
+                            <ul>
+                                            <a href="http://bsac.by/pages/volonterskii-centr" target="">Волонтёрский центр</a>
+                    
+                                    </ul>
+                            <ul>
+                                            <a href="http://bsac.by/pages/zakupki" target="">Закупки</a>
+                    
+                                    </ul>
+                            <ul>
+                                            <a href="http://bsac.by/pages/portal-reitingovoi-ocenki" target="">Портал рейтинговой оценки </a>
+                    
+                                    </ul>
+                            <ul>
+                                            <a href="http://bsac.by/pages/informacia-po-covid-19" target="">Информация по COVID-19</a>
+                    
+                                    </ul>
+                            <ul>
+                                            <a href="http://bsac.by/pages/centr-gigieny-i-epidemiologii-informiruet" target="">Центр гигиены и эпидемиологии информирует</a>
+                    
+                                    </ul>
+                            <ul>
+                                            <a href="http://bsac.by/pages/ugolok-pravovyh-znanii-obucausihsa" target="">Уголок правовых знаний обучающихся</a>
+                    
+                                    </ul>
+                            <ul>
+                                            <a href="https://svyaz.1prof.by/" target="">Белорусский профессиональный союз работников связи</a>
+                    
+                                    </ul>
+                        </li>
+                                    </ul>
+                            <ul>
+                                            <h5>Наши проекты</h5>
+                    
+                                            <li>                                            <ul>
+                                            <a href="http://bsac.by/projects/conference" target="">Конференция</a>
+                    
+                                    </ul>
+                            <ul>
+                                            <a href="http://bsac.by/projects/youth-in-science/" target="">Молодежь в науке</a>
+                    
+                                    </ul>
+                            <ul>
+                                            <a href="http://bsac.by/projects/learning-center/" target="">Учебный центр</a>
+                    
+                                    </ul>
+                            <ul>
+                                            <a href="http://umc.bsac.by" target="_blank">Почтовая безопасность</a>
+                    
+                                    </ul>
+                            <ul>
+                                            <a href="http://rfsc.vsol.org" target="">Калькулятор платы за спектр</a>
+                    
+                                    </ul>
+                            <ul>
+                                            <a href="http://sdo.bsac.by" target="">Платформа удаленного обучения</a>
+                    
+                                    </ul>
+                            <ul>
+                                            <a href="http://pic.bsac.by" target="">Журнал «Проблемы инфокоммуникаций»</a>
+                    
+                                    </ul>
+                        </li>
+                                    </ul>
+                        
+
+    </div>
+  </nav>
+<div id="block-aimylogicbot" class="block block-block-content block-block-contentdda142e2-d473-406f-a879-bcd629c2151b">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><br><p><div><script src="https://bot.jaicp.com/chatwidget/jeXfBmUp%3A7a1ba3b45daedfd704b8c7dcb6e6e0d4cc2b36ef/justwidget.js" async></script></p></div>
+</div>
+      
+  </div>
+<div id="block-bsac-gtranslate" class="block block-gtranslate block-gtranslate-block">
+  
+    
+      
+<div class="gtranslate">
+<script type="text/javascript">
+/* <![CDATA[ */
+eval(unescape("eval%28function%28p%2Ca%2Cc%2Ck%2Ce%2Cr%29%7Be%3Dfunction%28c%29%7Breturn%28c%3Ca%3F%27%27%3Ae%28parseInt%28c/a%29%29%29+%28%28c%3Dc%25a%29%3E35%3FString.fromCharCode%28c+29%29%3Ac.toString%2836%29%29%7D%3Bif%28%21%27%27.replace%28/%5E/%2CString%29%29%7Bwhile%28c--%29r%5Be%28c%29%5D%3Dk%5Bc%5D%7C%7Ce%28c%29%3Bk%3D%5Bfunction%28e%29%7Breturn%20r%5Be%5D%7D%5D%3Be%3Dfunction%28%29%7Breturn%27%5C%5Cw+%27%7D%3Bc%3D1%7D%3Bwhile%28c--%29if%28k%5Bc%5D%29p%3Dp.replace%28new%20RegExp%28%27%5C%5Cb%27+e%28c%29+%27%5C%5Cb%27%2C%27g%27%29%2Ck%5Bc%5D%29%3Breturn%20p%7D%28%276%207%28a%2Cb%29%7Bn%7B4%282.9%29%7B3%20c%3D2.9%28%22o%22%29%3Bc.p%28b%2Cf%2Cf%29%3Ba.q%28c%29%7Dg%7B3%20c%3D2.r%28%29%3Ba.s%28%5C%27t%5C%27+b%2Cc%29%7D%7Du%28e%29%7B%7D%7D6%20h%28a%29%7B4%28a.8%29a%3Da.8%3B4%28a%3D%3D%5C%27%5C%27%29v%3B3%20b%3Da.w%28%5C%27%7C%5C%27%29%5B1%5D%3B3%20c%3B3%20d%3D2.x%28%5C%27y%5C%27%29%3Bz%283%20i%3D0%3Bi%3Cd.5%3Bi++%294%28d%5Bi%5D.A%3D%3D%5C%27B-C-D%5C%27%29c%3Dd%5Bi%5D%3B4%282.j%28%5C%27k%5C%27%29%3D%3DE%7C%7C2.j%28%5C%27k%5C%27%29.l.5%3D%3D0%7C%7Cc.5%3D%3D0%7C%7Cc.l.5%3D%3D0%29%7BF%286%28%29%7Bh%28a%29%7D%2CG%29%7Dg%7Bc.8%3Db%3B7%28c%2C%5C%27m%5C%27%29%3B7%28c%2C%5C%27m%5C%27%29%7D%7D%27%2C43%2C43%2C%27%7C%7Cdocument%7Cvar%7Cif%7Clength%7Cfunction%7CGTranslateFireEvent%7Cvalue%7CcreateEvent%7C%7C%7C%7C%7C%7Ctrue%7Celse%7CdoGTranslate%7C%7CgetElementById%7Cgoogle_translate_element2%7CinnerHTML%7Cchange%7Ctry%7CHTMLEvents%7CinitEvent%7CdispatchEvent%7CcreateEventObject%7CfireEvent%7Con%7Ccatch%7Creturn%7Csplit%7CgetElementsByTagName%7Cselect%7Cfor%7CclassName%7Cgoog%7Cte%7Ccombo%7Cnull%7CsetTimeout%7C500%27.split%28%27%7C%27%29%2C0%2C%7B%7D%29%29"))
+/* ]]> */
+</script><style type="text/css">
+<!--
+#goog-gt-tt {display:none !important;}
+
+.goog-te-banner-frame {display:none !important;}
+
+.goog-te-menu-value:hover {text-decoration:none !important;}
+
+body {top:0 !important;}
+
+#google_translate_element2 {display:none!important;}
+-->
+</style><div id="google_translate_element2"></div>
+<script type="text/javascript">function googleTranslateElementInit2() {new google.translate.TranslateElement({pageLanguage: 'ru', autoDisplay: false}, 'google_translate_element2');}</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit2"></script><div class="switcher notranslate"><div class="selected"><a href="#" onclick="return false;"><span class="gflag" style="background-position:-500px -200px"><img src="/modules/gtranslate/gtranslate-files/blank.png" height="16" width="16" alt="Russian" /></span>Russian</a></div><div class="option"><a href="#" onclick="doGTranslate('ru|ru');jQuery(this).parent().parent().find('div.selected a').html(jQuery(this).html());return false;" title="Russian" class="nturl  selected"><span class="gflag" style="background-position:-500px -200px;"><img src="/modules/gtranslate/gtranslate-files/blank.png" height="16" width="16" alt="Russian" /></span>Russian</a><a href="#" onclick="doGTranslate('ru|af');jQuery(this).parent().parent().find('div.selected a').html(jQuery(this).html());return false;" title="Afrikaans" class="nturl "><span class="gflag" style="background-position:-300px -500px;"><img src="/modules/gtranslate/gtranslate-files/blank.png" height="16" width="16" alt="Afrikaans" /></span>Afrikaans</a><a href="#" onclick="doGTranslate('ru|ar');jQuery(this).parent().parent().find('div.selected a').html(jQuery(this).html());return false;" title="Arabic" class="nturl "><span class="gflag" style="background-position:-100px -0px;"><img src="/modules/gtranslate/gtranslate-files/blank.png" height="16" width="16" alt="Arabic" /></span>Arabic</a><a href="#" onclick="doGTranslate('ru|az');jQuery(this).parent().parent().find('div.selected a').html(jQuery(this).html());return false;" title="Azerbaijani" class="nturl "><span class="gflag" style="background-position:-500px -600px;"><img src="/modules/gtranslate/gtranslate-files/blank.png" height="16" width="16" alt="Azerbaijani" /></span>Azerbaijani</a><a href="#" onclick="doGTranslate('ru|be');jQuery(this).parent().parent().find('div.selected a').html(jQuery(this).html());return false;" title="Belarusian" class="nturl "><span class="gflag" style="background-position:-0px -600px;"><img src="/modules/gtranslate/gtranslate-files/blank.png" height="16" width="16" alt="Belarusian" /></span>Belarusian</a><a href="#" onclick="doGTranslate('ru|zh-TW');jQuery(this).parent().parent().find('div.selected a').html(jQuery(this).html());return false;" title="Chinese (Traditional)" class="nturl "><span class="gflag" style="background-position:-400px -0px;"><img src="/modules/gtranslate/gtranslate-files/blank.png" height="16" width="16" alt="Chinese (Traditional)" /></span>Chinese (Traditional)</a><a href="#" onclick="doGTranslate('ru|en');jQuery(this).parent().parent().find('div.selected a').html(jQuery(this).html());return false;" title="English" class="nturl "><span class="gflag" style="background-position:-0px -0px;"><img src="/modules/gtranslate/gtranslate-files/blank.png" height="16" width="16" alt="English" /></span>English</a><a href="#" onclick="doGTranslate('ru|fr');jQuery(this).parent().parent().find('div.selected a').html(jQuery(this).html());return false;" title="French" class="nturl "><span class="gflag" style="background-position:-200px -100px;"><img src="/modules/gtranslate/gtranslate-files/blank.png" height="16" width="16" alt="French" /></span>French</a><a href="#" onclick="doGTranslate('ru|ja');jQuery(this).parent().parent().find('div.selected a').html(jQuery(this).html());return false;" title="Japanese" class="nturl "><span class="gflag" style="background-position:-700px -100px;"><img src="/modules/gtranslate/gtranslate-files/blank.png" height="16" width="16" alt="Japanese" /></span>Japanese</a><a href="#" onclick="doGTranslate('ru|ko');jQuery(this).parent().parent().find('div.selected a').html(jQuery(this).html());return false;" title="Korean" class="nturl "><span class="gflag" style="background-position:-0px -200px;"><img src="/modules/gtranslate/gtranslate-files/blank.png" height="16" width="16" alt="Korean" /></span>Korean</a><a href="#" onclick="doGTranslate('ru|tr');jQuery(this).parent().parent().find('div.selected a').html(jQuery(this).html());return false;" title="Turkish" class="nturl "><span class="gflag" style="background-position:-100px -500px;"><img src="/modules/gtranslate/gtranslate-files/blank.png" height="16" width="16" alt="Turkish" /></span>Turkish</a><a href="#" onclick="doGTranslate('ru|uk');jQuery(this).parent().parent().find('div.selected a').html(jQuery(this).html());return false;" title="Ukrainian" class="nturl "><span class="gflag" style="background-position:-100px -400px;"><img src="/modules/gtranslate/gtranslate-files/blank.png" height="16" width="16" alt="Ukrainian" /></span>Ukrainian</a></div></div><style type="text/css">
+			        span.gflag {font-size:16px;padding:1px 0;background-repeat:no-repeat;background-image:url(/modules/gtranslate/gtranslate-files/16.png);}
+			        span.gflag img {border:0;margin-top:2px;}
+			        .switcher {font-family:Arial;font-size:10pt;text-align:left;cursor:pointer;overflow:hidden;width:163px;line-height:16px;}
+			        .switcher a {text-decoration:none;display:block;font-size:10pt;-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box;border:none;}
+			        .switcher a span.gflag {margin-right:3px;padding:0;display:block;float:left;}
+			        .switcher .selected {background:#FFFFFF url(/modules/gtranslate/gtranslate-files/switcher.png) repeat-x;position:relative;z-index:9999;}
+			        .switcher .selected a {border:1px solid #CCCCCC;background:url(/modules/gtranslate/gtranslate-files/arrow_down.png) 146px center no-repeat;color:#666666;padding:3px 5px;width:151px;}
+			        .switcher .selected a:hover {background:#F0F0F0 url(/modules/gtranslate/gtranslate-files/arrow_down.png) 146px center no-repeat;}
+			        .switcher .option {position:relative;z-index:9998;border-left:1px solid #CCCCCC;border-right:1px solid #CCCCCC;border-bottom:1px solid #CCCCCC;background-color:#EEEEEE;display:none;width:161px;-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box;}
+			        .switcher .option a {color:#000;padding:3px 5px;}
+			        .switcher .option a:hover {background:#FFC;}
+			        .switcher .option a.selected {background:#FFC;}
+			        #selected_lang_name {float: none;}
+			        .l_name {float: none !important;margin: 0;}
+			    </style>
+</div>
+  </div>
+
+  </div>
+
+            <p>© 2015 - 2022 УО Белорусская государственная академия связи</p>
+        </div>
+    </footer>
+
+
+
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node","currentPathIsAdmin":false,"isFront":true,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","ajaxPageState":{"libraries":"bsac\/font-awesome,bsac\/global-css,bsac\/global-js,bsac\/hc-sticky,bsac\/jssocials,bsac\/landing,bsac\/swiper,classy\/base,classy\/messages,core\/html5shiv,core\/normalize,gtranslate\/jquery-slider,system\/base,views\/views.ajax,views\/views.module","theme":"bsac","theme_token":null},"ajaxTrustedUrl":[],"views":{"ajax_path":"\/views\/ajax","ajaxViews":{"views_dom_id:f988260df815190d826b7433072cebf443736f5a765d37f7d92b90bc8d238172":{"view_name":"frontpage","view_display_id":"page_1","view_args":"","view_path":"\/node","view_base_path":"node","view_dom_id":"f988260df815190d826b7433072cebf443736f5a765d37f7d92b90bc8d238172","pager_element":0},"views_dom_id:a5c64f99ca04c67058c375d1cff85441f9705679c457bac26f9341ea18532037":{"view_name":"actual_events","view_display_id":"block_1","view_args":"","view_path":"\/node","view_base_path":null,"view_dom_id":"a5c64f99ca04c67058c375d1cff85441f9705679c457bac26f9341ea18532037","pager_element":0},"views_dom_id:5a48329c70c5635456b0a0065e5f654cc0773a025fffe60ba05e4842548b1c8d":{"view_name":"events_front","view_display_id":"block_1","view_args":"","view_path":"\/node","view_base_path":null,"view_dom_id":"5a48329c70c5635456b0a0065e5f654cc0773a025fffe60ba05e4842548b1c8d","pager_element":0},"views_dom_id:f33801a74534411e8609ed23d8c2533aaee79c8192300b74344709232185466c":{"view_name":"nav_main","view_display_id":"block_1","view_args":"","view_path":"\/node","view_base_path":null,"view_dom_id":"f33801a74534411e8609ed23d8c2533aaee79c8192300b74344709232185466c","pager_element":0}}},"user":{"uid":0,"permissionsHash":"c932b840973229aa8e4ae4991c10da5c201607de51e382dc67516b05f9fa2360"}}</script>
+<script src="/sites/default/files/js/js_39tVBy5-ibhGaHvaZsCArpYlwJb3Kn7XyrVCO4vZqUo.js"></script>
+
+  </body>
+</html>
